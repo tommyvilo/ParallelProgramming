@@ -40,7 +40,7 @@ int main() {
   }
 
   //@@ Initialize the grid and block dimensions
-  int threadsPerBlock = 256; //numero comunemente usato perchè spesso ottimale per le gpu (nonche threads max per blocco dice chatGPT)
+  int threadsPerBlock = 512; //numero comunemente usato perchè spesso ottimale per le gpu (nonche threads max per blocco dice chatGPT)
   int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock; //formula da usare per capire quanti blocchi mi servono in totale per avere un completo parallelismo, il + threadsPerBlock - 1 serve per arrotondare per eccesso, in questo caso l'ultimo blocco avrà solo 41 threads attivi
 
   //@@ Launch kernel to set all elements of vector
